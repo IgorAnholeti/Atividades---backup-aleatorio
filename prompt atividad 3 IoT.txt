@@ -1,0 +1,40 @@
+Atividade de IoT com ESP32 no Wokwi.
+
+O sistema deve reconhecer pelo menos três tipos de entrada: 
+● clique curto -> Exibe no OLED ''Clique curto'' -> Ligar LED da direita ou Desligar o LED da direita
+● clique longo -> Exibe no OLED ''Clique longo'' -> Ligar LED da esquerda ou Desligar o LED da esquerda
+
+● múltiplos cliques em sequência. -> Exibe no OLED ''Clique múltiplo '' -> 1-Ligar/2-Desligar LEDS
+
+Cada tipo de interação deve acionar um modo diferente de operação, exibindo as respectivas mensagens 
+no visor e concluindo as respectivas ações.
+
+OBS: Para cada ação, exiba uma mensagem interativa no terminal
+
+A detecção do tipo de clique deve ser baseada na medição do tempo em que o botão permanece pressionado
+e no intervalo entre pressões, sem utilizar atrasos que bloqueie o fluxo do programa. 
+
+Dica: Utilizar millis()
+
+O sistema deve operar continuamente, permitindo a atualização do visor e a leitura do botão 
+de forma simultânea.
+
+
+COMPONENTES: ESP32 — OLED — 02 LEDS — HALF BOARD
+
+
+# TAREFAS 
+ 
+Crie o código base para este sistema embarcado e o seu perfeito funcionamento. Lembre de explicar bem sobre código com comentários ou da forma que achar melhor. 
+
+Liste também bem explicado sobre o diagrama das conexões e quais GPIOS devo utilizar para cada componente.
+
+DIAGRAMA 
+
+Componente	Pino ESP32	Observação
+Botão	        GPIO 12	         Ligar entre o pino e o GND (usaremos INPUT_PULLUP).
+LED Direita	GPIO 14	         Ligar com um resistor de 220Ω ao GND.
+LED Esquerda	GPIO 27	         Ligar com um resistor de 220Ω ao GND.
+OLED SDA	GPIO 21	         Protocolo I2C padrão.
+OLED SCL	GPIO 22	         Protocolo I2C padrão.
+VCC / GND	3V3 / GND	 Alimentação dos componentes. 
